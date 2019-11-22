@@ -1,8 +1,9 @@
 FROM alpine:latest
 
-RUN apk add --no-cache bash uwsgi uwsgi-python py2-pip \
-  && pip2 install --upgrade pip \
-  && pip2 install flask
+#RUN apk add --no-cache bash uwsgi uwsgi-python py2-pip 
+RUN apk add --no-cache bash py2-pip 
+RUN pip2 install --upgrade pip 
+RUN pip2 install flask
 
 COPY app.py /opt/
 
